@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar números para apostar en Baloto</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="baloto.js"></script>
+    <div class="container">
+        <div class="left-block">
+            <h2>Números Baloto</h2>
+            <p class="texto__parrafo"></p>
+            <div class="chute container__botones">
+                <textarea   class="texto input-1" type="text"  name="texto" id="texto"  rows="4" cols="50"></textarea>
+                <textarea   class="texto input-3" type="text"  name="texto" id="texto-b"  rows="4" cols="50"></textarea>
+                <button onclick="mezclar(44,4);" class="container__boton" id="baloto">Jugar</button>
+                <button onclick="mezclar(17,0);" class="container__boton" id="superbalota" disabled>Super balota</button>
+            </div>
+        </div>
+        <div class="right-block">
+            <h2>Números Miloto</h2>
+            <p class="texto__parrafo"></p>
+            <div class="chute container__botones">
+                <textarea   class="texto input-2" type="text"  name="texto" id="texto-mi"  rows="4" cols="50"></textarea>
+                <button onclick="mezclar(40,4);" class="container__boton">Jugar</button>
+            </div>
+        </div>
+    </div>
+<script src="baloto.js"></script>
 </body>
 </html>

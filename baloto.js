@@ -1,11 +1,4 @@
 
-console.log('Procesando los números para el Baloto: ');
-mezclar(44,4);
-console.log('Procesando la superbalota para el Baloto: ');
-mezclar(17,0);
-console.log('Procesando los números para el Miloto: ');
-mezclar(40,4);
-
 function inicializaBaloto(cantidadBalota) {
     let baloto = [0];
     let contador = 1;
@@ -37,5 +30,15 @@ function mezclar(cantidadBalota, numeroApostar){
             apostar.push(mezclaFin[balotaSeleccionada]);
         } 
     }
- console.log(apostar);
-}
+    if (cantidadBalota == 44){
+        document.getElementById('superbalota').removeAttribute('disabled');
+        document.querySelector('.input-1').value=apostar;
+        document.getElementById('baloto').setAttribute('disabled','true');
+    }else if (cantidadBalota == 17) {
+        document.getElementById('superbalota').setAttribute('disabled','true');
+        document.querySelector('.input-3').value=apostar;
+        document.getElementById('baloto').removeAttribute('disabled');
+    }else{
+        document.querySelector('.input-2').value=apostar;
+    }
+ }
