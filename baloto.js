@@ -26,6 +26,7 @@ function mezclar(cantidadBalota, numeroApostar){
         }
         if (apostar.includes(mezclaFin[balotaSeleccionada])) {
             balotaSeleccionada = Math.floor((Math.random() * (cantidadBalota-1) + 1));
+
         } else {
             apostar.push(mezclaFin[balotaSeleccionada]);
         } 
@@ -39,6 +40,6 @@ function mezclar(cantidadBalota, numeroApostar){
         document.querySelector('.input-3').value=apostar;
         document.getElementById('baloto').removeAttribute('disabled');
     }else{
-        document.querySelector('.input-2').value=apostar;
+        document.querySelector('.input-1').value=apostar;
     }
  }
