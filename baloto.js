@@ -18,7 +18,7 @@ return baloto;
 function mezclar(cantidadBalota, numeroApostar){
     let apostar = [];
     let mezclaFin = [];
-    let mezcla = Math.floor((Math.random() * 1000000 + 1));
+    let mezcla = Math.floor((Math.random() * 1000 + 1));
     for (let balota = 1; apostar.length <= numeroApostar; balota++){
         let balotaSeleccionada = Math.floor((Math.random() * (cantidadBalota-1) + 1));
         for (let contador = 1;contador <= mezcla; contador++){
