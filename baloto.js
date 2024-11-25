@@ -1,12 +1,12 @@
 
 // Definición de los rangos con sus respectivas letras, para Colorloto
-const rangosBaloto = [
+const rangosColorloto = [
     { min: 1, max: 7, letra: 'B' },
     { min: 8, max: 14, letra: 'M' },
     { min: 15, max: 21, letra: 'N' },
     { min: 22, max: 28, letra: 'R' },
     { min: 29, max: 35, letra: 'V' },
-    { min: 36, max: 42, letra: 'Z' },
+    { min: 36, max: 42, letra: 'Z' }
 ];
 
 function inicializaBaloto(cantidadBalota) {
@@ -61,7 +61,7 @@ function mezclar(cantidadBalota, numeroApostar){
             apostar.push(mezclaFin[balotaSeleccionada]);
             break;
             case 43:
-                generarColorloto(43, rangosBaloto);
+                generarColorloto(43, rangosColorloto);
             case 44:
                 apostar.push(mezclaFin[balotaSeleccionada]); 
                 document.getElementById('superbalota').removeAttribute('disabled');
