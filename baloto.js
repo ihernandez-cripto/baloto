@@ -69,6 +69,7 @@ function mezclar(cantidadBalota, numeroApostar){
                 document.getElementById('baloto').setAttribute('disabled','true'); 
                 break
             case 17:
+                apostar.push(mezclaFin[balotaSeleccionada]);
                 document.getElementById('superbalota').setAttribute('disabled','true');
                 document.querySelector('.input-3').value=apostar;
                 document.getElementById('baloto').removeAttribute('disabled');
