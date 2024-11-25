@@ -58,24 +58,17 @@ function mezclar(cantidadBalota, numeroApostar){
             switch(cantidadBalota){
             case 40:
                 apostar.push(mezclaFin[balotaSeleccionada]);
-                break;
             case 43:
                 generarColorloto(43, rangosColorloto);
-                break;
             case 44:
                 apostar.push(mezclaFin[balotaSeleccionada]); 
                 document.getElementById('superbalota').removeAttribute('disabled');
                 document.querySelector('.input-1').value=apostar;
                 document.getElementById('baloto').setAttribute('disabled','true'); 
-                break;
             case 17:
                 document.getElementById('superbalota').setAttribute('disabled','true');
                 document.querySelector('.input-3').value=apostar;
                 document.getElementById('baloto').removeAttribute('disabled');
-                break;
-            default :
-                document.querySelector('.input-1').value=apostar;
-                break;
             }
         } 
     }
