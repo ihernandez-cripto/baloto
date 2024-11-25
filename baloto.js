@@ -39,23 +39,23 @@ function mezclar(cantidadBalota, numeroApostar){
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 8 && balotaSeleccionada <= 14:
-                        balotaSeleccionada = `M${balotaSeleccionada}`;
+                        balotaSeleccionada = `M${balotaSeleccionada - 7}`;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 15 && balotaSeleccionada <= 21:
-                        balotaSeleccionada = `N${balotaSeleccionada}`;
+                        balotaSeleccionada = `N${balotaSeleccionada - 14}`;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 22 && balotaSeleccionada <= 28:
-                        balotaSeleccionada = `R${balotaSeleccionada}`;
+                        balotaSeleccionada = `R${balotaSeleccionada - 21}`;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 29 && balotaSeleccionada <= 35:
-                        balotaSeleccionada = `V${balotaSeleccionada}`;
+                        balotaSeleccionada = `V${balotaSeleccionada - 28}`;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 36 && balotaSeleccionada <= 42:
-                        balotaSeleccionada = `Z${balotaSeleccionada}`;
+                        balotaSeleccionada = `Z${balotaSeleccionada - 35}`;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                 }
