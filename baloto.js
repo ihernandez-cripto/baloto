@@ -15,9 +15,10 @@ function seleccionarAleatorio(array) {
   return elementoSeleccionado;
 }
 
-function mezclar(arreglo, numeroApostar){
+function mezclar(nombreArreglo, numeroApostar){
+    const arregloUtilizado = eval(nombreArreglo);
     for (let i = 0; i < numeroApostar; i++) {
-        const elementoSeleccionado = seleccionarAleatorio(arreglo);
+        const elementoSeleccionado = seleccionarAleatorio(arregloUtilizado);
         resultados.push(elementoSeleccionado);
       }
  }
