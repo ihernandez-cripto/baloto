@@ -59,7 +59,7 @@ function mezclar(cantidadBalota, numeroApostar){
             case 40:
                 apostar.push(mezclaFin[balotaSeleccionada]);
             case 43:
-                generarColorloto(43, rangosColorloto);
+                apostar = generarColorloto(43, rangosColorloto);
             case 44:
                 apostar.push(mezclaFin[balotaSeleccionada]); 
                 document.getElementById('superbalota').removeAttribute('disabled');
