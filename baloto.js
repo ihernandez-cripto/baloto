@@ -54,14 +54,14 @@ function mezclar(cantidadBalota, numeroApostar){
         }
         if (apostar.includes(mezclaFin[balotaSeleccionada])) {
             balotaSeleccionada = Math.floor((Math.random() * (cantidadBalota-1) + 1));
-
         } else {
             switch(cantidadBalota){
             case 40:
-            apostar.push(mezclaFin[balotaSeleccionada]);
-            break;
+                apostar.push(mezclaFin[balotaSeleccionada]);
+                break;
             case 43:
                 generarColorloto(43, rangosColorloto);
+                break;
             case 44:
                 apostar.push(mezclaFin[balotaSeleccionada]); 
                 document.getElementById('superbalota').removeAttribute('disabled');
