@@ -28,18 +28,52 @@ function mezclar(cantidadBalota, numeroApostar){
             balotaSeleccionada = Math.floor((Math.random() * (cantidadBalota-1) + 1));
 
         } else {
+            switch(cantidadBalota){
+            case 40:
             apostar.push(mezclaFin[balotaSeleccionada]);
+            break;
+            case 43:
+                switch (balotaSeleccionada){
+                    case balotaSeleccionada >= 1 && balotaSeleccionada <= 7:
+                        balotaSeleccionada = `B${balotaSeleccionada}`;
+                        apostar.push(mezclaFin[balotaSeleccionada]);
+                        break;
+                    case balotaSeleccionada >= 8 && balotaSeleccionada <= 14:
+                        balotaSeleccionada = `M${balotaSeleccionada}`;
+                        apostar.push(mezclaFin[balotaSeleccionada]);
+                        break;
+                    case balotaSeleccionada >= 15 && balotaSeleccionada <= 21:
+                        balotaSeleccionada = `N${balotaSeleccionada}`;
+                        apostar.push(mezclaFin[balotaSeleccionada]);
+                        break;
+                    case balotaSeleccionada >= 22 && balotaSeleccionada <= 28:
+                        balotaSeleccionada = `R${balotaSeleccionada}`;
+                        apostar.push(mezclaFin[balotaSeleccionada]);
+                        break;
+                    case balotaSeleccionada >= 29 && balotaSeleccionada <= 35:
+                        balotaSeleccionada = `V${balotaSeleccionada}`;
+                        apostar.push(mezclaFin[balotaSeleccionada]);
+                        break;
+                    case balotaSeleccionada >= 36 && balotaSeleccionada <= 42:
+                        balotaSeleccionada = `Z${balotaSeleccionada}`;
+                        apostar.push(mezclaFin[balotaSeleccionada]);
+                        break;
+                }
+            case 44:
+                apostar.push(mezclaFin[balotaSeleccionada]); 
+                document.getElementById('superbalota').removeAttribute('disabled');
+                document.querySelector('.input-1').value=apostar;
+                document.getElementById('baloto').setAttribute('disabled','true'); 
+                break;
+            case 17:
+                document.getElementById('superbalota').setAttribute('disabled','true');
+                document.querySelector('.input-3').value=apostar;
+                document.getElementById('baloto').removeAttribute('disabled');
+                break;
+            default :
+                document.querySelector('.input-1').value=apostar;
+                break;
+            }
         } 
-    }
-    if (cantidadBalota == 44){
-        document.getElementById('superbalota').removeAttribute('disabled');
-        document.querySelector('.input-1').value=apostar;
-        document.getElementById('baloto').setAttribute('disabled','true');
-    }else if (cantidadBalota == 17) {
-        document.getElementById('superbalota').setAttribute('disabled','true');
-        document.querySelector('.input-3').value=apostar;
-        document.getElementById('baloto').removeAttribute('disabled');
-    }else{
-        document.querySelector('.input-1').value=apostar;
     }
  }
