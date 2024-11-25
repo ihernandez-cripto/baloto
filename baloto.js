@@ -58,6 +58,7 @@ function mezclar(cantidadBalota, numeroApostar){
             switch(cantidadBalota){
             case 40:
                 apostar.push(mezclaFin[balotaSeleccionada]);
+                break;
             case 43:
                 apostar = generarColorloto(43, rangosColorloto);
             case 44:
