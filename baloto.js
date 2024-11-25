@@ -1,58 +1,23 @@
+// Arreglo original
+const colorLoto = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'N1', 'N2', 'N3', 'N4', 'N5', 'N6', 'N7', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'Z1', 'Z2', 'Z3', 'Z4', 'Z5', 'Z6', 'Z7'];
+const baLoto = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42','43'];
+const miLoto = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39'];
+const superBalota = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'];
 
-// Definición de los rangos con sus respectivas letras, para Colorloto
-const rangosColorloto = [
-    { min: 1, max: 7, letra: 'B' },
-    { min: 8, max: 14, letra: 'M' },
-    { min: 15, max: 21, letra: 'N' },
-    { min: 22, max: 28, letra: 'R' },
-    { min: 29, max: 35, letra: 'V' },
-    { min: 36, max: 42, letra: 'Z' }
-];
+// Arreglo para almacenar los resultados
+const resultados = [];
 
-function inicializaBaloto(cantidadBalota) {
-    let baloto = [0];
-    let contador = 1;
-    let asignaNumero = 0;
-    while (contador < cantidadBalota) {
-        asignaNumero = Math.floor((Math.random() * (cantidadBalota-1) + 1));
-            if (baloto.includes(asignaNumero)) {
-                contador = baloto.length;
-            } else {
-                baloto.push(asignaNumero);
-                contador = baloto.length;
-            } 
-    }
-return baloto;
+// Función para seleccionar y eliminar un elemento aleatorio
+function seleccionarAleatorio(array) {
+  const indiceAleatorio = Math.floor(Math.random() * array.length);
+  const elementoSeleccionado = array[indiceAleatorio];
+  array.splice(indiceAleatorio, 1); // Elimina el elemento del arreglo
+  return elementoSeleccionado;
 }
 
-function generarColorloto(cantidadBalota, rangos) {
-    const mezclaFin = inicializaBaloto(cantidadBalota);
-    const apuestas = [];
-
-    while (apuestas.length < numeroApostar) {
-        const balotaSeleccionada = mezclaFin[Math.floor(Math.random() * cantidadBalota)];
-
-        const rango = rangos.find(r => balotaSeleccionada >= r.min && balotaSeleccionada <= r.max);
-        if (rango) {
-            const valorConLetra = rango.letra + balotaSeleccionada;
-            if (!apuestas.includes(valorConLetra)) {
-                apuestas.push(valorConLetra);
-            }
-        }
-    return apuestas;
-    }
-}
-
-function mezclar(cantidadBalota, numeroApostar){
-    let apostar = [];
-    let mezclaFin = [];
-    let mezcla = Math.floor((Math.random() * 1000 + 1));
-    for (let balota = 1; apostar.length <= numeroApostar; balota++){
-        let balotaSeleccionada = Math.floor((Math.random() * (cantidadBalota-1) + 1));
-        for (let contador = 1;contador <= mezcla; contador++){
-            mezclaFin = inicializaBaloto(cantidadBalota);  
-        }
-
-                apostar = generarColorloto(43, rangosColorloto);
-    }
+function mezclar(arreglo, numeroApostar){
+    for (let i = 0; i < numeroApostar; i++) {
+        const elementoSeleccionado = seleccionarAleatorio(arreglo);
+        resultados.push(elementoSeleccionado);
+      }
  }
