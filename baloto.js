@@ -35,27 +35,32 @@ function mezclar(cantidadBalota, numeroApostar){
             case 43:
                 switch (balotaSeleccionada){
                     case balotaSeleccionada >= 1 && balotaSeleccionada <= 7:
-                        balotaSeleccionada = `B${balotaSeleccionada}`;
+                        balotaSeleccionada = "B" + balotaSeleccionada;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 8 && balotaSeleccionada <= 14:
-                        balotaSeleccionada = `M${balotaSeleccionada - 7}`;
+                        balotaSeleccionada -= 7;
+                        balotaSeleccionada = "M" + balotaSeleccionada - 7;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 15 && balotaSeleccionada <= 21:
-                        balotaSeleccionada = `N${balotaSeleccionada - 14}`;
+                        balotaSeleccionada -= 14;
+                        balotaSeleccionada = "N" + balotaSeleccionada;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 22 && balotaSeleccionada <= 28:
-                        balotaSeleccionada = `R${balotaSeleccionada - 21}`;
+                        balotaSeleccionada -= 21;
+                        balotaSeleccionada = "R" + balotaSeleccionada;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 29 && balotaSeleccionada <= 35:
-                        balotaSeleccionada = `V${balotaSeleccionada - 28}`;
+                        balotaSeleccionada -= 28;
+                        balotaSeleccionada = "V" + balotaSeleccionada;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                     case balotaSeleccionada >= 36 && balotaSeleccionada <= 42:
-                        balotaSeleccionada = `Z${balotaSeleccionada - 35}`;
+                        balotaSeleccionada -= 35;
+                        balotaSeleccionada = "Z" + balotaSeleccionada;
                         apostar.push(mezclaFin[balotaSeleccionada]);
                         break;
                 }
