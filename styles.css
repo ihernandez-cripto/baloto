@@ -21,15 +21,12 @@ body {
     width: 100%;
 }
 
-.left-block, .right-block {
+.left-block {
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.left-block {
     flex: 1; /* Ocupa el 50% del contenedor */
     margin-right: 10px;
 }
@@ -49,6 +46,7 @@ body {
 
 .container__botones {
     display: flex;
+    flex-direction: column;
     gap: 2em;
 }
 
