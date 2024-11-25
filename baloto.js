@@ -63,10 +63,11 @@ function mezclar(cantidadBalota, numeroApostar){
                 apostar = generarColorloto(43, rangosColorloto);
                 break
             case 44:
-                apostar.push(mezclaFin[balotaSeleccionada]); 
+                 
                 document.getElementById('superbalota').removeAttribute('disabled');
                 document.querySelector('.input-1').value=apostar;
-                document.getElementById('baloto').setAttribute('disabled','true'); 
+                document.getElementById('baloto').setAttribute('disabled','true');
+                apostar.push(mezclaFin[balotaSeleccionada]); 
                 break
             case 17:
                 apostar.push(mezclaFin[balotaSeleccionada]);
