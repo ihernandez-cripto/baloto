@@ -52,10 +52,7 @@ function mezclar(cantidadBalota, numeroApostar){
         for (let contador = 1;contador <= mezcla; contador++){
             mezclaFin = inicializaBaloto(cantidadBalota);  
         }
-        if (apostar.includes(mezclaFin[balotaSeleccionada])) {
-            balotaSeleccionada = Math.floor((Math.random() * (cantidadBalota-1) + 1));
-        } else {
+
                 apostar = generarColorloto(43, rangosColorloto);
-        } 
     }
  }
