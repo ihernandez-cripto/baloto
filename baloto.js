@@ -1,4 +1,14 @@
 
+// Definición de los rangos con sus respectivas letras, para Colorloto
+const rangosBaloto = [
+    { min: 1, max: 7, letra: 'B' },
+    { min: 8, max: 14, letra: 'M' },
+    { min: 15, max: 21, letra: 'N' },
+    { min: 22, max: 28, letra: 'R' },
+    { min: 29, max: 35, letra: 'V' },
+    { min: 36, max: 42, letra: 'Z' },
+];
+
 function inicializaBaloto(cantidadBalota) {
     let baloto = [0];
     let contador = 1;
@@ -13,6 +23,24 @@ function inicializaBaloto(cantidadBalota) {
             } 
     }
 return baloto;
+}
+
+function generarColorloto(cantidadBalota, rangos) {
+    const mezclaFin = inicializaBaloto(cantidadBalota);
+    const apuestas = [];
+
+    while (apuestas.length < numeroApostar) {
+        const balotaSeleccionada = mezclaFin[Math.floor(Math.random() * cantidadBalota)];
+
+        const rango = rangos.find(r => balotaSeleccionada >= r.min && balotaSeleccionada <= r.max);
+        if (rango) {
+            const valorConLetra = rango.letra + balotaSeleccionada;
+            if (!apuestas.includes(valorConLetra)) {
+                apuestas.push(valorConLetra);
+            }
+        }
+    return apuestas;
+    }
 }
 
 function mezclar(cantidadBalota, numeroApostar){
@@ -31,52 +59,23 @@ function mezclar(cantidadBalota, numeroApostar){
             switch(cantidadBalota){
             case 40:
             apostar.push(mezclaFin[balotaSeleccionada]);
+            break;
             case 43:
-                switch (balotaSeleccionada){
-                    case balotaSeleccionada >= 1 && balotaSeleccionada <= 7:
-                        balotaSeleccionada = "B" + balotaSeleccionada;
-                        apostar.push(mezclaFin[balotaSeleccionada]);
-                        break;
-                    case balotaSeleccionada >= 8 && balotaSeleccionada <= 14:
-                        balotaSeleccionada -= 7;
-                        balotaSeleccionada = "M" + balotaSeleccionada - 7;
-                        apostar.push(mezclaFin[balotaSeleccionada]);
-                        break;
-                    case balotaSeleccionada >= 15 && balotaSeleccionada <= 21:
-                        balotaSeleccionada -= 14;
-                        balotaSeleccionada = "N" + balotaSeleccionada;
-                        apostar.push(mezclaFin[balotaSeleccionada]);
-                        break;
-                    case balotaSeleccionada >= 22 && balotaSeleccionada <= 28:
-                        balotaSeleccionada -= 21;
-                        balotaSeleccionada = "R" + balotaSeleccionada;
-                        apostar.push(mezclaFin[balotaSeleccionada]);
-                        break;
-                    case balotaSeleccionada >= 29 && balotaSeleccionada <= 35:
-                        balotaSeleccionada -= 28;
-                        balotaSeleccionada = "V" + balotaSeleccionada;
-                        apostar.push(mezclaFin[balotaSeleccionada]);
-                        break;
-                    case balotaSeleccionada >= 36 && balotaSeleccionada <= 42:
-                        balotaSeleccionada -= 35;
-                        balotaSeleccionada = "Z" + balotaSeleccionada;
-                        apostar.push(mezclaFin[balotaSeleccionada]);
-                        break;
-                }
+                generarColorloto(43, rangosBaloto);
             case 44:
                 apostar.push(mezclaFin[balotaSeleccionada]); 
                 document.getElementById('superbalota').removeAttribute('disabled');
                 document.querySelector('.input-1').value=apostar;
                 document.getElementById('baloto').setAttribute('disabled','true'); 
-            
+                break;
             case 17:
                 document.getElementById('superbalota').setAttribute('disabled','true');
                 document.querySelector('.input-3').value=apostar;
                 document.getElementById('baloto').removeAttribute('disabled');
-            
+                break;
             default :
                 document.querySelector('.input-1').value=apostar;
-            
+                break;
             }
         } 
     }
