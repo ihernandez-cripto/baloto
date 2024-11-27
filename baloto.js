@@ -20,5 +20,6 @@ function mezclar(nombreArreglo, numeroApostar){
         const elementoSeleccionado = seleccionarAleatorio(arregloUtilizado);
         resultados.push(elementoSeleccionado);
       }
+      arregloUtilizado = eval(nombreArreglo);
       document.querySelector('.input-1').value=resultados;
  }
