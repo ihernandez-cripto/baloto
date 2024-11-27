@@ -16,11 +16,10 @@ function seleccionarAleatorio(array) {
 
 function mezclar(nombreArreglo, numeroApostar){
     resultados = [];
-    arregloCompleto = eval(nombreArreglo).slice();
+    arregloCompleto = eval(nombreArreglo).slice(); // crear el respaldo del arreglo original
     for (let i = 0; i < numeroApostar; i++) {
-        const elementoSeleccionado = seleccionarAleatorio(eval(nombreArreglo));
+        const elementoSeleccionado = seleccionarAleatorio(eval(arregloCompleto));
         resultados.push(elementoSeleccionado);
       }
-      eval(nombreArreglo) = arregloCompleto.slice();  
       document.querySelector('.input-1').value=resultados;
  }
