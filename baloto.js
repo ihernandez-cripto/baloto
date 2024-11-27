@@ -5,6 +5,7 @@ const miLoto = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '
 const superBalota = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'];
 // Arreglo para almacenar los resultados
 let resultados = [];
+let arregloCompleto = [];
 // Función para seleccionar y eliminar un elemento aleatorio
 function seleccionarAleatorio(array) {
   const indiceAleatorio = Math.floor(Math.random() * array.length);
@@ -15,11 +16,11 @@ function seleccionarAleatorio(array) {
 
 function mezclar(nombreArreglo, numeroApostar){
     resultados = [];
-    const arregloUtilizado = eval(nombreArreglo);
+    arregloCompleto = eval(nombreArreglo).slice();
     for (let i = 0; i < numeroApostar; i++) {
-        const elementoSeleccionado = seleccionarAleatorio(arregloUtilizado);
+        const elementoSeleccionado = seleccionarAleatorio(eval(nombreArreglo));
         resultados.push(elementoSeleccionado);
       }
-      arregloUtilizado = eval(nombreArreglo);
+      eval(nombreArreglo) = arregloCompleto.slice();  
       document.querySelector('.input-1').value=resultados;
  }
