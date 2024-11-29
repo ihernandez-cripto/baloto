@@ -16,9 +16,8 @@ function seleccionarAleatorio(array) {
 
 // Función para inicializar los elementos del arreglo aleatoriamente
 function inicializarElementos(array) {
-  const arregloUtilizado = eval(array);
-  for (let i = 0; i < arregloUtilizado.length; i++) {
-    const elementoAleatorio = seleccionarAleatorio(arregloUtilizado);
+  for (let i = 0; i < array.length; i++) {
+    const elementoAleatorio = seleccionarAleatorio(array);
     arregloInicializado.push(elementoAleatorio);
   }
   return arregloInicializado;
